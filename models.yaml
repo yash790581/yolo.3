@@ -1,0 +1,76 @@
+# ==============================================================================
+# UrbanSense AI - Central Models Configuration Registry
+# Relative paths from ai_models directory or project root
+# ==============================================================================
+
+vehicle:
+  name: "vehicle"
+  enabled: true
+  model_path: "ai_models/vehicle/model/vehicle.pt"
+  confidence: 0.35
+  tracking: true
+  classes: [1, 2, 3, 5, 7]  # bicycle, car, motorcycle, bus, truck
+  category: "vehicle"
+  description: "Vehicle detection and persistent tracking using Ultralytics YOLO + ByteTrack"
+
+number_plate:
+  name: "number_plate"
+  enabled: true
+  model_path: "ai_models/number_plate/model/number_plate.pt"
+  confidence: 0.25
+  enable_ocr: true
+  category: "number_plate"
+  description: "Automatic Number Plate Recognition (ANPR) with EasyOCR extraction"
+
+pothole:
+  name: "pothole"
+  enabled: true
+  model_path: "ai_models/pothole/model/pothole.pt"
+  confidence: 0.30
+  category: "pothole"
+  description: "Road surface pothole defect detection with area-based severity scoring"
+
+person:
+  name: "person"
+  enabled: true
+  model_path: "ai_models/person/model/person.pt"
+  confidence: 0.35
+  classes: [0]  # person
+  category: "person"
+  description: "Pedestrian detection in roadway corridors for safety risk analysis"
+
+traffic_light:
+  name: "traffic_light"
+  enabled: true
+  model_path: "ai_models/traffic_light/model/traffic_light.pt"
+  confidence: 0.30
+  classes: [9]  # traffic light
+  category: "traffic_light"
+  description: "Traffic signal observation and localization"
+
+traffic_sign:
+  name: "traffic_sign"
+  enabled: true
+  model_path: "ai_models/traffic_sign/model/traffic_sign.pt"
+  confidence: 0.30
+  classes: [11]  # stop sign / traffic sign
+  category: "traffic_sign"
+  description: "Roadside regulatory traffic sign detection"
+
+zebra_crossing:
+  name: "zebra_crossing"
+  enabled: true
+  model_path: "ai_models/zebra_crossing/model/zebra_crossing.pt"
+  confidence: 0.25
+  method: "cv_heuristic"
+  category: "zebra_crossing"
+  description: "Pedestrian crosswalk road stripe frequency and morphology analyzer"
+
+waterlogging:
+  name: "waterlogging"
+  enabled: true
+  model_path: "ai_models/waterlogging/model/waterlogging.pt"
+  confidence: 0.30
+  method: "specular_reflection"
+  category: "waterlogging"
+  description: "Road surface puddle and water accumulation analyzer using HSV specular reflection"
